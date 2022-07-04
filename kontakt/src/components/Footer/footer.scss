@@ -1,0 +1,35 @@
+#footer{
+    background-color: #383E42;
+    color: white;
+    padding: 30px;
+    ul{
+        li{
+            list-style: none;
+            padding: 6px;
+            font-size: 18px;
+            span{
+                cursor: pointer;
+                &:hover{
+                    border-bottom: 2px solid white;
+                }
+            }
+            svg{
+                color: white;
+                path{
+                    color: white;
+                    background-color: white;
+                }
+            }
+        }
+    }
+
+    .bottom{
+        display: flex;
+        align-items: center;
+        i{
+            padding-left: 15px;
+            font-size: 20px;
+        }
+
+    }
+}
