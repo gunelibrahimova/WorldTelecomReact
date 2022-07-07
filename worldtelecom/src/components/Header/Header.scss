@@ -1,0 +1,149 @@
+#header {
+    .top-header {
+        align-items: center;
+        background-color: #F2F2F2;
+        padding: 15px;
+        display: flex;
+
+        .left-list {
+            display: flex;
+            align-items: center;
+
+            .header-image {
+                width: 44px;
+                height: 28px;
+            }
+
+            .first-list {
+                list-style: none;
+                display: flex;
+
+                .first-list-element {
+                    padding: 5px;
+
+                    &.number {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+
+    .bottom-header {
+        background-color: #383E42;
+        color: white;
+        padding: 15px;
+
+        .left-bottom {
+            width: 60%;
+
+            .icon {
+                font-size: 25px;
+                text-align: center;
+                width: 80%;
+
+            }
+        }
+
+        .center-bottom {
+            background-color: white;
+            border-radius: 5px;
+
+            input {
+                width: 95%;
+                padding: 12px;
+                border-radius: 5px;
+                border: none;
+                outline: none;
+            }
+
+            i {
+                color: black;
+            }
+        }
+
+        .right-bottom {
+            display: flex;
+            padding-left: 30px;
+            align-items: center;
+
+            .company {
+                padding: 10px 20px;
+                border: 1px solid white;
+                border-radius: 5px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: white;
+                    color: #383E42;
+                }
+            }
+
+            .icon-box {
+                padding: 20px;
+                display: flex;
+                align-items: center;
+
+                .svg-icon {
+                    padding-left: 15px;
+                }
+
+                .hoverBox {
+                    position: relative;
+                    cursor: pointer;
+                    &:hover{
+                        .hoverTextBox{
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
+                    
+                    .hoverTextBox {
+                        position: absolute;
+                        padding: 10px 50px;
+                        top: 100%;
+                        left: 0%;
+                        background-color: white;
+                        color: grey;
+                        border-radius: 5px;
+                        z-index: 99999;
+                        opacity: 0;
+                        visibility: hidden;
+                        .text{
+                            font-size: 12px;
+                        }
+                        .buttonBoxx {
+                            padding-bottom: 10px;
+                            button {
+                                padding: 5px 40px;
+                                border: none;
+                                background-color: white;
+                                
+                                border: 1px solid #8DC63F;
+                                border-radius: 5px;
+                                a{
+                                    text-decoration: none;
+                                    color: #8DC63F;
+                                }
+                            }
+                        }
+                        .buttonBox {
+                            padding-bottom: 10px;
+                            button {
+                                padding: 5px 59px;
+                                border: none;
+                                background-color: #8DC63F;
+                                color: white;
+                                border-radius: 5px;
+                                a{
+                                    text-decoration: none;
+                                    color: white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

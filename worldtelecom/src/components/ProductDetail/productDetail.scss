@@ -1,0 +1,144 @@
+#productDetail {
+    background-color: #F2F2F2;
+
+    .top {
+        a {
+            text-decoration: none;
+        }
+
+        .turnBack {
+            color: grey;
+            text-decoration: none;
+        }
+    }
+
+    .bottom {
+        .center-box {
+            background-color: white;
+            
+            .top-box{
+                padding: 30px;
+                .left {
+                    .sml-picture {
+                        border: 1px solid rgb(198, 198, 198);
+                        padding: 10px;
+                        margin-bottom: 10px;
+                        border-radius: 5px;
+    
+                        &.active {
+                            display: block;
+                        }
+                    }
+    
+                    .big-picture {
+                        border: 1px solid rgb(198, 198, 198);
+                        padding: 10px;
+                        border-radius: 5px;
+    
+                    }
+                }
+    
+                .right-box {
+                    width: 100%;
+                    padding-bottom: 30px;
+    
+                    .stock {
+                        span {
+                            background-color: black;
+                            color: white;
+                            text-align: center;
+                            padding: 5px 70px;
+                            border-radius: 5px;
+                            font-size: 15px;
+                        }
+    
+                    }
+    
+                    .order {
+                        span {
+                            background-color: grey;
+                            color: white;
+                            text-align: center;
+                            padding: 5px 60px;
+                            border-radius: 5px;
+                            font-size: 15px;
+                        }
+    
+                    }
+    
+                    .text {
+                        margin-bottom: 30px;
+                        p {
+                            margin-top: 30px;
+                        }
+                    }
+    
+                    .whatsapp {
+                        border: 1px solid rgb(207, 207, 207);
+                        padding: 0px 5px;
+                        border-radius: 5px;
+                        cursor: pointer;
+    
+                        span {
+                            font-size: 13px;
+                            .icons {
+                                width: 100%;
+                                margin: auto;
+                            }
+                        }
+    
+                    }
+                    .sebet{
+                        border: 1px solid #8DC63F;
+                        padding: 13px 5px;
+                        border-radius: 5px;
+                        text-align: center;
+                        cursor: pointer;
+                        i{
+                            padding-right: 7px;
+                            color: #8DC63F;
+                        }
+                        span{
+                            color: #8DC63F;
+                        }
+                        &:hover{
+                           background-color:#8DC63F ;
+                           span{
+                            color: white;
+                           }
+                           i{
+                            color: white;
+    
+                           }
+                            
+                        }
+                    }
+                    .heart-icon{
+                        i{
+                            background-color: #FAFAFA;
+                            color: #DADADA;
+                            padding: 10px;
+                            border-radius: 5px;
+                            font-size: 22px;
+                        }
+                        
+                    }
+                }
+            }
+            .bottom-box{
+                .parametrs{
+                    
+                    
+                    .grey-box{
+                        background-color: #FAFAFA;
+                        padding: 10px;
+                        justify-content: space-around;
+                        margin-bottom: 13px;
+                    }
+                }
+            }
+
+           
+        }
+    }
+}
