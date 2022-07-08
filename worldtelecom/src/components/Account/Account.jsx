@@ -20,10 +20,7 @@ const Account = () => {
       navigate("/")
     }
 
-     
-
-
-
+    
 
   return (
     <div id='accoutPage'>

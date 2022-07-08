@@ -2,8 +2,24 @@ import React, { useEffect, useState } from 'react'
 import './productDetail.scss'
 import { Link, useParams } from 'react-router-dom';
 import { BASE_URL } from '../../api/config';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCartAction } from '../../redux/Actions/CartAction';
 
 const ProductDetail = () => {
+
+    const dispach = useDispatch();
+
+
+    const  {cartItems}  = useSelector((state) => state.cart)
+
+    const addToCartHadler = (id,name) => {
+        var myCart = cartItems.find(e => e.id === id)
+        if (myCart) {
+          dispach(addToCartAction(id, myCart.quantity + 1))
+        } else {
+          dispach(addToCartAction(id, 1))
+        }
+      }
 
     const { id } = useParams()
     const [product, setProduct] = useState([])
@@ -79,8 +95,8 @@ const ProductDetail = () => {
                                                 </div>
                                             </div>
                                             <div className="col-lg-6">
-                                                <div className="sebet">
-                                                    <i class="fa-solid fa-cart-shopping"></i>
+                                                <div className="sebet" onClick={() => addToCartHadler(product.id, product.name)}>
+                                                    <i class="fa-solid fa-cart-shopping" ></i>
                                                     <span>Səbətə əlavə et</span>
 
                                                 </div>
