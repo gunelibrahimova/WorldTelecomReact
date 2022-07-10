@@ -10,7 +10,7 @@ import { getUserAction } from "../../redux/Actions/UserAction";
 import { CheckOutAction } from "./../../redux/Actions/CheckOutAction";
 import { Link, useNavigate } from "react-router-dom";
 
-const Cart = () => {
+function Cart() {
   const { cartItems } = useSelector((state) => state.cart);
   const [totalPrice, setTotalPrice] = useState(0);
   const dispach = useDispatch();
@@ -75,11 +75,12 @@ const Cart = () => {
               <div className="bottom">
                 <div className="row">
                   <div className="col-lg-7">
-                    
-                      <Link to="/" style={{textDecoration : "none", color: "white"}}>
+
+                    <Link to="/" style={{ textDecoration: "none", color: "white" }}>
                       <button className="shoppingButton">
                         Alış-verişə davam edin
-                        </button></Link>
+                      </button></Link>
+
                   </div>
                   <div className="col-lg-5">
                     <h3>Ümumi hesab</h3>
@@ -101,10 +102,28 @@ const Cart = () => {
                         </td>
                       </tr>
                     </table>
-                    <button>Sifarişi rəsmiləşdir</button>
+
+
+                    {
+                      cartItems.length > 0 ?
+                        <Link to="/finish">
+                          <button>Sifarişi rəsmiləşdir</button>
+                        </Link>
+                        : (
+                          <Link to="/cart">
+                            <button>Sifarişi rəsmiləşdir</button>
+                          </Link>
+                        )
+                    }
+
+
+
                   </div>
                 </div>
               </div>
+
+
+
             </div>
           </div>
         </div>

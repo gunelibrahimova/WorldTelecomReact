@@ -125,24 +125,24 @@ const ProductDetail = () => {
                                             <div className="grey-box">
                                                 <div className="d-flex justify-content-between">
                                                     <span>Marka</span>
-                                                    <span>Apple</span>
+                                                    <span>{product.marka}</span>
                                                 </div>
                                             </div>
                                             <div className="grey-box">
                                                 <div className="d-flex justify-content-between">
                                                     <span>Model</span>
-                                                    <span>{product.name}</span>
+                                                    <span>{product.model}</span>
                                                 </div>
                                             </div>
                                             <div className="grey-box">
                                                 <div className="d-flex justify-content-between">
                                                     <span>Ekranın ölçüsü</span>
-                                                    <span>6.1"</span>
+                                                    <span>{product.ekran}</span>
                                                 </div>
                                             </div><div className="grey-box">
                                                 <div className="d-flex justify-content-between">
-                                                    <span>Ekranın imkanları</span>
-                                                    <span>1170 x 2532 px</span>
+                                                    <span>Çəki</span>
+                                                    <span>{product.ceki}</span>
                                                 </div>
                                             </div>
 
@@ -151,24 +151,24 @@ const ProductDetail = () => {
                                         <div className="col-lg-6">
                                             <div className="grey-box">
                                                 <div className="d-flex justify-content-between">
-                                                    <span>Radio</span>
-                                                    <span>-</span>
+                                                    <span>Prosessor</span>
+                                                    <span>{product.processor}</span>
                                                 </div>
                                             </div><div className="grey-box">
                                                 <div className="d-flex justify-content-between">
-                                                    <span>Təhlükəsizlik</span>
-                                                    <span>PIN, Face ID</span>
+                                                    <span>Kamera</span>
+                                                    <span>{product.kamera}</span>
                                                 </div>
                                             </div><div className="grey-box">
                                                 <div className="d-flex justify-content-between">
-                                                    <span>Sim-kart sayı</span>
-                                                    <span>1</span>
+                                                    <span>Operativ yaddaş (RAM)</span>
+                                                    <span>{product.ram}</span>
                                                 </div>
                                             </div>
                                             <div className="grey-box">
                                                 <div className="d-flex justify-content-between">
-                                                    <span>Yaddaş kart dəstəyi</span>
-                                                    <span>-</span>
+                                                    <span>Daxili Yaddaş</span>
+                                                    <span>{product.rom}</span>
                                                 </div>
                                             </div>
                                         </div>

@@ -4,6 +4,7 @@
         background-color: #F2F2F2;
         padding: 15px;
         display: flex;
+        align-items: center;
 
         .left-list {
             display: flex;
@@ -20,6 +21,7 @@
 
                 .first-list-element {
                     padding: 5px;
+                    cursor: pointer;
 
                     &.number {
                         font-weight: bold;

@@ -3,7 +3,10 @@ import { Route, Routes } from 'react-router-dom'
 import Account from '../components/Account/Account'
 import Auth from '../components/Auth/Auth'
 import Cart from '../components/Cart/Cart'
+import Contact from '../components/Contact/Contact'
+import Favories from '../components/Favories/Favories'
 import Detail from '../Pages/Detail'
+import FinishPages from '../Pages/FinishPages'
 import Home from '../Pages/Home'
 
 
@@ -15,6 +18,9 @@ const MyRouter = () => {
       <Route path='/auth' element={<Auth />} />
       <Route path='/account' element={<Account />} />
       <Route path='/cart' element={<Cart />} />
+      <Route path='/favories' element={<Favories />} />
+      <Route path='/finish' element={<FinishPages />} />
+      <Route path='/contact' element={<Contact />} />
     </Routes>
   )
 }
