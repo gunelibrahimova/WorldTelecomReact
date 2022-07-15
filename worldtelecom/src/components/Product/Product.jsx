@@ -11,44 +11,43 @@ import './product.scss'
 const Product = () => {
 
 
-    const  {cartItems}  = useSelector((state) => state.cart)
+    const { cartItems } = useSelector((state) => state.cart)
 
-    const  {favoriesItems}  = useSelector((state) => state.favories)
-
-    console.log(favoriesItems);
+    const { favoriesItems } = useSelector((state) => state.favories)
 
     const [cart, setCart] = useState(0)
 
 
-    const {cartCount,setCartCount} = useContext(CartContext);
+    const { cartCount, setCartCount } = useContext(CartContext);
 
 
-    const addToCartHadler = (id,name) => {
+    const addToCartHadler = (id, name) => {
         var myCart = cartItems.find(e => e.id === id)
         if (myCart) {
-          dispach(addToCartAction(id, myCart.quantity + 1))
+            dispach(addToCartAction(id, myCart.quantity + 1))
         } else {
-          dispach(addToCartAction(id, 1))
+            dispach(addToCartAction(id, 1))
         }
-        setCartCount(cartCount+1);
-      }
+        setCartCount(cartCount + 1);
+    }
 
-      const addToCartHardler = (id,name) => {
+    const addToCartHardler = (id, name) => {
         var myCart = favoriesItems.find(e => e.id === id)
         if (myCart) {
-          dispach(addToFavoriesAction(id, myCart.quantity + 1))
+            dispach(addToFavoriesAction(id, myCart.quantity + 1))
         } else {
-          dispach(addToFavoriesAction(id, 1))
+            dispach(addToFavoriesAction(id, 1))
         }
-        
-      }
+    }
 
     const getProduct = useSelector((state) => state.products.products)
 
+
+
+
+
     const dispach = useDispatch();
 
-
-    
 
     useEffect(() => {
         dispach(getProductsAction())
@@ -64,6 +63,8 @@ const Product = () => {
                     <div className="col-lg-11">
                         <h3>Ən çox satanlar</h3>
                         <div className="row">
+
+
                             {
                                 getProduct &&
                                 getProduct.filter(x => x.isStock === true && x.isSlider === true).map((prod) => (
@@ -75,7 +76,7 @@ const Product = () => {
                                                 </Link>
 
                                                 <div className="heart-icon">
-                                                    <i class="fa-solid fa-heart" style={{cursor: "pointer"}} onClick={() => addToCartHardler(prod.id, prod.name) }></i>
+                                                    <i class="fa-solid fa-heart" style={{ cursor: "pointer" }} onClick={() => addToCartHardler(prod.id, prod.name)}></i>
                                                 </div>
                                             </div>
                                             <hr />
@@ -104,8 +105,8 @@ const Product = () => {
                                                     <button className='buyButton' onClick={e => addToCartHadler(prod.id, prod.name)}>İndi al</button>
                                                 </div>
                                                 <div className="col-lg-3">
-                                                    
-                                                  <i class="fa-solid fa-cart-plus buyIcon"  onClick={() => addToCartHadler(prod.id, prod.name) }></i>
+
+                                                    <i class="fa-solid fa-cart-plus buyIcon" onClick={() => addToCartHadler(prod.id, prod.name)}></i>
                                                 </div>
                                             </div>
                                         </div>

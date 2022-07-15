@@ -5,8 +5,11 @@ import Auth from '../components/Auth/Auth'
 import Cart from '../components/Cart/Cart'
 import Contact from '../components/Contact/Contact'
 import Favories from '../components/Favories/Favories'
+import NotFound from '../components/NotFound/NotFound'
+import Search from '../components/Search/Search'
 import Detail from '../Pages/Detail'
 import FinishPages from '../Pages/FinishPages'
+
 import Home from '../Pages/Home'
 
 
@@ -21,6 +24,8 @@ const MyRouter = () => {
       <Route path='/favories' element={<Favories />} />
       <Route path='/finish' element={<FinishPages />} />
       <Route path='/contact' element={<Contact />} />
+      <Route path='*' element={<NotFound />} />
+      <Route path='/search' element={<Search />} />
     </Routes>
   )
 }

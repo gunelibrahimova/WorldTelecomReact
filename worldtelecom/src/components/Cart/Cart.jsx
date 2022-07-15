@@ -18,6 +18,62 @@ function Cart() {
   const navigate = useNavigate();
   const [count, setCounter] = useState(0);
 
+
+  const addOrder = () => {
+    if (userInfo.length !== 0) {
+      const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+          confirmButton: "btn btn-success",
+          cancelButton: "btn btn-danger",
+        },
+        buttonsStyling: false,
+      });
+      swalWithBootstrapButtons
+        .fire({
+          title: "Sifarisi tamamlamaq istediyinizden eminsiniz?",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonText: "Sifarisi tamamla",
+          cancelButtonText: "Legv et!",
+          reverseButtons: true,
+        })
+        .then((result) => {
+          if (result.isConfirmed) {
+            if (cartItems.length > 0) {
+              dispach(CheckOutAction(userInfo.id));
+              dispach(removeAllCartAction());
+              navigate("/finish");
+            }
+            else {
+              Swal.fire("Səbətiniz boşdur.");
+              navigate("/cart");
+            }
+          } 
+          else if (
+            /* Read more about handling dismissals below */
+            result.dismiss === Swal.DismissReason.cancel
+          ) 
+          {
+            swalWithBootstrapButtons.fire(
+              "Ləğv olundu.",
+              "error"
+            );
+          }
+        });
+    } 
+    else {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Evvelce daxil olmalisiniz!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate("/auth");
+        }
+      });
+    }
+  };
+
   const countTotal = () => {
     var price = 0;
     cartItems.map((cart) => {
@@ -75,12 +131,10 @@ function Cart() {
               <div className="bottom">
                 <div className="row">
                   <div className="col-lg-7">
-
                     <Link to="/" style={{ textDecoration: "none", color: "white" }}>
                       <button className="shoppingButton">
                         Alış-verişə davam edin
                       </button></Link>
-
                   </div>
                   <div className="col-lg-5">
                     <h3>Ümumi hesab</h3>
@@ -102,34 +156,16 @@ function Cart() {
                         </td>
                       </tr>
                     </table>
-
-
-                    {
-                      cartItems.length > 0 ?
-                        <Link to="/finish">
-                          <button>Sifarişi rəsmiləşdir</button>
-                        </Link>
-                        : (
-                          <Link to="/cart">
-                            <button>Sifarişi rəsmiləşdir</button>
-                          </Link>
-                        )
-                    }
-
-
-
+                    <button onClick={() => addOrder()} >
+                      Sifarişi rəsmiləşdir
+                    </button>
                   </div>
                 </div>
               </div>
-
-
-
             </div>
           </div>
         </div>
       </div>
-
-
     </div>
   );
 };

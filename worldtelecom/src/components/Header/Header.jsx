@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { CartContext } from '../../context/MyContext'
@@ -18,6 +18,9 @@ const Header = () => {
     dispatch(logoutUserAction())
     navigate("/")
   }
+
+  const getProduct = useSelector((state) => state.products.products)
+
 
   return (
     <div id='header'>
@@ -55,7 +58,7 @@ const Header = () => {
             </div>
             <div className="col-lg-6">
               <div className="center-bottom">
-                <input placeholder='Məhsul axtar...' type="text" />
+                <input placeholder='Məhsul axtar...' type="text"/>
                 <i class="fa-solid fa-magnifying-glass"></i>
               </div>
             </div>

@@ -34,7 +34,7 @@ const NewProducts = () => {
                 <div className="row">
                     <div className="col-lg-1"></div>
                     <div className="col-lg-11">
-                        <h3>Endirimli məhsullar</h3>
+                        {/* <h3>Endirimli məhsullar</h3> */}
                         <div className="row">
                             {
                                 getProduct &&

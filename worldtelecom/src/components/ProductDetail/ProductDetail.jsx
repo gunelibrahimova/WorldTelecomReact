@@ -4,6 +4,8 @@ import { Link, useParams } from 'react-router-dom';
 import { BASE_URL } from '../../api/config';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCartAction } from '../../redux/Actions/CartAction';
+import { useContext } from 'react';
+import { CartContext } from '../../context/MyContext';
 
 const ProductDetail = () => {
 
@@ -11,6 +13,9 @@ const ProductDetail = () => {
 
 
     const  {cartItems}  = useSelector((state) => state.cart)
+    const { cartCount, setCartCount } = useContext(CartContext);
+
+
 
     const addToCartHadler = (id,name) => {
         var myCart = cartItems.find(e => e.id === id)
@@ -19,6 +24,7 @@ const ProductDetail = () => {
         } else {
           dispach(addToCartAction(id, 1))
         }
+        setCartCount(cartCount + 1);
       }
 
     const { id } = useParams()
@@ -85,8 +91,7 @@ const ProductDetail = () => {
                                             <div className="col-lg-5 order"><span>Pulsuz çatdırılma</span> </div>
                                         </div>
                                         <div className="text">
-                                            <p>{product.description}</p>
-                                            
+                                            <p>{product.description}</p> 
                                         </div>
                                         <div className="row align-items-center">
                                             <div className="col-lg-3">
@@ -97,8 +102,7 @@ const ProductDetail = () => {
                                             <div className="col-lg-6">
                                                 <div className="sebet" onClick={() => addToCartHadler(product.id, product.name)}>
                                                     <i class="fa-solid fa-cart-shopping" ></i>
-                                                    <span>Səbətə əlavə et</span>
-
+                                                    <span >Səbətə əlavə et</span>
                                                 </div>
                                             </div>
                                             <div className="col-lg-2">
@@ -107,11 +111,7 @@ const ProductDetail = () => {
                                                 </div>
                                             </div>
                                         </div>
-
                                     </div>
-
-
-
                                 </div>
                             </div>
                         </div>
